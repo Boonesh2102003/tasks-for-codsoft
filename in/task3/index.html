@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Calculator</title>
+  <style>
+    body {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      height: 100vh;
+      margin: 0px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #7d8181, #838182);
+    }
+    .calculator {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 320px;
+      max-width: 100%;
+    }
+    .calculator input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .calculator button {
+      width: 23%;
+      margin: 1%;
+      padding: 15px 0;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #1284a7;
+      color: #020103;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .calculator button:hover {
+      background-color: #20eba7;
+    }
+    .calculator .wide {
+      width: 48%;
+    }
+    .calculator .output {
+      height: 50px;
+      font-size: 1.5rem;
+      text-align: right;
+      background-color: #bfe4e6;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 480px) {
+      .calculator button {
+        font-size: 1rem;
+        padding: 10px 0;
+      }
+      .calculator .output {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" class="output" id="output" disabled>
+    <button onclick="clearOutput()">C</button>
+    <button onclick="deleteLast()">DEL</button>
+    <button onclick="appendNumber('/')">/</button>
+    <button onclick="appendNumber('*')">*</button>
+    <button onclick="appendNumber('+')">+</button>
+    <button onclick="appendNumber('-')">-</button>
+    <button onclick="appendNumber('7')">7</button>
+    <button onclick="appendNumber('8')">8</button>
+    <button onclick="appendNumber('9')">9</button>
+    <button onclick="appendNumber('4')">4</button>
+    <button onclick="appendNumber('5')">5</button>
+    <button onclick="appendNumber('6')">6</button>
+    <button onclick="appendNumber('1')">1</button>
+    <button onclick="appendNumber('2')">2</button>
+    <button onclick="appendNumber('3')">3</button>
+    <button class="wide" onclick="appendNumber('0')">0</button>
+    <button onclick="appendNumber('.')">.</button>
+    <button class="wide" onclick="calculate()">=</button>
+  </div>
+
+  <script>
+    const output = document.getElementById('output');
+
+    function clearOutput() {
+      output.value = '';
+    }
+
+    function deleteLast() {
+      output.value = output.value.slice(0, -1);
+    }
+
+    function appendNumber(number) {
+      output.value += number;
+    }
+
+    function calculate() {
+      try {
+        output.value = eval(output.value);
+      } catch {
+        output.value = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>

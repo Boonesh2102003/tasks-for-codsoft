@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/e246c3baca.js" crossorigin="anonymous"></script>
+  <title>Mr. Phoenix Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #0000003d;
+    }
+
+    /* Global Styles */
+    section {
+      padding: 20px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: rgb(99, 93, 93);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li a {
+      text-decoration: none;
+      color: rgb(111, 236, 132);
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    nav li a:hover {
+      color: rgb(255, 111, 224);
+    }
+
+    .first {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .About {
+      flex: 1 1 45%;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+
+    .imgdiv {
+      flex: 1 1 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgb(31, 252, 68);
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: rgb(51, 135, 226) 2px 30px 40px -10px;
+    }
+
+    .imgdiv img {
+      width: 100%;
+      height: auto;
+      margin-top: 7%;
+      filter: drop-shadow(15px 0px 4px rgb(72, 255, 0));
+    }
+
+    .buttondown {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    .button1 {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #000;
+      color: #fff;
+      text-align: center;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .button1:hover {
+      transform: scale(1.1);
+      box-shadow: rgb(255, 0, 242) 0px 0px 30px 1px;
+    }
+
+    .part2 {
+      background: rgba(0, 12, 14, 0.548);
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .block {
+      flex: 1 1 300px;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 4px solid rgb(104, 38, 226);
+      border-radius: 20px;
+      box-shadow: rgb(51, 135, 226) 0px 20px 30px -10px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .block:hover {
+      transform: scale(1.05);
+      border-color: rgb(122, 183, 194);
+      box-shadow: rgb(41, 236, 15) 0px 20px 30px -10px;
+    }
+
+    .part3 {
+      background: rgba(0, 0, 0, 0);
+    }
+
+    .main3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .skill {
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: linear-gradient(to right, rgb(204, 0, 255), rgb(0, 183, 255));
+      border: 2px solid;
+      border-radius: 10px;
+      box-shadow: rgb(236, 17, 236) 0px 20px 30px -10px;
+      font-weight: bold;
+      color: transparent;
+      background-clip: text;
+      transition: transform 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .input, .input1 {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .submit {
+      padding: 10px 20px;
+      background: linear-gradient(to right bottom, rgb(255, 0, 242), rgb(130, 222, 238));
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .submit:hover {
+      transform: scale(1.1);
+    }
+
+    /* Headings and Highlights */
+    h1, h2 {
+      background: linear-gradient(to right, rgb(204, 0, 255), rgb(0, 183, 255));
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    span {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: url(./pexels-anniroenkae-14016173.jpg);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .first {
+        flex-direction: column;
+      }
+
+      .imgdiv {
+        margin-bottom: 20px;
+      }
+
+      .button1 {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav li a {
+        font-size: 1rem;
+      }
+
+      .block {
+        flex: 1 1 100%;
+      }
+    }
+    footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-container div {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+    margin-top: 0;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.icon:hover,a {
+    text-decoration:none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+  </style>
+</head>
+<body>
+  <section class="part1" id="hforabout1">
+    <nav>
+      <ul class="nav">
+        <li><a href="#hforabout1">About</a></li>
+        <li><a href="#hforservices1">Services</a></li>
+        <li><a href="#hforskill1">Skill</a></li>
+        <li><a href="#contact1">Contact Me</a></li>
+      </ul>
+    </nav>
+    <div class="first" id="first1">
+      <div class="imgdiv">
+        <img src="./androgynous-avatar-non-binary-queer-person.png" alt="Profile Picture" />
+      </div>
+      <div class="About">
+        <h1 class="hforabout">About</h1>
+        <h2 class="hforhi">Hi I'm <span>Boovesh</span></h2>
+        <article>
+          I am a final year College Student of BE CSE in MEC, with an interest in
+          Front End Development and UI/UX Design to build web applications
+          and mobile apps using HTML / CSS / JS and other cool libraries
+          and frameworks.
+        </article>
+        <div class="buttondown">
+          <a href="./Boovesh G RESUME.docx" download="Resume" class="button1">Download CV</a>
+          <a href="#" class="button1">View CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="part2" id="hforservices1">
+    <div class="main2">
+      <h1 class="hforservices">What I Do?</h1>
+      <div class="services">
+        <div class="block">
+          <h1 class="h1">Web Development</h1>
+          <article class="para">
+            Crafting websites by coding, designing, and
+            optimizing for functionality, performance, and user experience,
+            enabling online presence and interaction.
+          </article>
+        </div>
+        <div class="block">
+          <h1 class="h1">Java Programming</h1>
+          <article class="para">
+            As an enthusiastic and highly-skilled Java Developer, I bring a
+            solid foundation in software development. I successfully designed
+            and developed applications, websites, and complex programs.
+          </article>
+        </div>
+        <div class="block">
+          <h1 class="h1">Software Development</h1>
+          <article class="para">
+            Software development services encompass designing, coding,
+            testing, and maintaining applications to meet specific client
+            needs, delivering tailored software solutions.
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="part3" id="hforskill1">
+    <h1 class="hforskill">My Skills</h1>
+    <div class="main3">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JS</div>
+      <div class="skill">Web Design</div>
+      <div class="skill">Java</div>
+      <div class="skill">MySQL</div>
+    </div>
+  </section>
+ <section class="part4" id="contact1">
+  <h1 class="get"><span>Get</span> In Touch</h1>
+  <div class="contatact-container container">
+    <form id="contact-form">
+      <div class="form">
+        <input type="text" id="first-name" placeholder="First Name" required class="input" />
+        <input type="text" id="last-name" placeholder="Last Name" required class="input" />
+        <input type="email" id="email" placeholder="Email" required class="input" />
+        <input type="number" id="phone" placeholder="Phone Number" required class="input" />
+      </div>
+      <div class="form">
+        <textarea id="message" name="message" placeholder="Message" class="input1"></textarea>
+        <button type="submit" class="submit">Submit Now</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section>
+
+  <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Me</h3>
+                <p>
+                  I am a final year College Student of BE CSE in MEC, with an interest in
+          Front End Development and UI/UX Design to build web applications
+          and mobile apps using HTML / CSS / JS and other cool libraries
+          and frameworks.
+                </p> </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+        <li><a href="#hforabout1">About</a></li>
+        <li><a href="#hforservices1">Services</a></li>
+        <li><a href="#hforskill1">Skill</a></li>
+        <li><a href="#contact1">Contact Me</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+                <div class="icon">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-instagram"></a></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Boovesh. All rights reserved.</p>
+        </div>
+    </footer>
+</section>
+</body>
+</html>
